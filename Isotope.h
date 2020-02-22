@@ -15,6 +15,7 @@ private:
 public:
 	Isotope();
 	Isotope(const char* halflife, short decaymode, const char* name, const char* product, double abundance);
+	//~Isotope() { cout << "析构" << endl; }
 	string getHalflife() { return this->halflife; }
 	short getDecaymode() { return this->decaymode; }
 	char* getName() { return this->name; }
@@ -46,6 +47,6 @@ inline Isotope::Isotope(const char* halflife, short decaymode, const char* name,
 
 inline void Isotope::display()
 {
-	cout << '\t' << this->name << '\t' << ((this->abundance < 0.001) ? "痕量" : to_string(this->abundance).substr(0, 6)) << "%\t  " << this->halflife << "\t  "
-		<< (this->decaymode == 0 ? "——" : (this->decaymode == 1 ? "α" : (this->decaymode == 2 ? "β" : "其他"))) << "\t    " << this->product << endl;
+	cout << '\t'<<setiosflags(ios::left)<<setw(10) <<setfill(' ')<< this->name << setw(10) << setfill(' ') << ((this->abundance < 0.001) ? "痕量" : to_string(this->abundance).substr(0, 6).insert(6, 1, '%'))  << setw(10) << setfill(' ') << this->halflife
+		<< setw(10) << setfill(' ') << (this->decaymode == 0 ? "——" : (this->decaymode == 1 ? "α" : (this->decaymode == 2 ? "β" : "其他")))  << setw(10) << setfill(' ') << this->product << endl;
 }

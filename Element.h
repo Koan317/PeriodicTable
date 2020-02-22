@@ -3,7 +3,7 @@
 #include"Isotope.h"
 using namespace std;
 
-class Element
+class Element :public Isotope
 {
 private:
 	Isotope isotope[10];//常见同位素
@@ -18,6 +18,7 @@ private:
 	short number;//原子序数
 	short period;//周期数
 public:
+	Element();
 	Element(const Isotope* isotope, string electron, double meltPT, double boilPT, double density, const short* oxistats, const char* nameC, const char* nameE, const char* group, short number, short period);
 	Isotope* getIsotope() { return this->isotope; }
 	string getElectron() { return this->electron; }
@@ -30,12 +31,12 @@ public:
 	char* getGroup() { return this->group; }
 	short getNumber() { return this->number; }
 	short getPeriod() { return this->period; }
-	void setIsotope(Isotope* isotope) { memcpy(this->isotope, isotope, sizeof(isotope)+1); }
+	void setIsotope(Isotope* isotope) { memcpy(this->isotope, isotope, sizeof(isotope) + 1); }
 	void setElectron(string electron) { this->electron = electron; }
 	void setMeltPT(double meltPT) { this->meltPT = meltPT; }
 	void setBoilPT(double boilPT) { this->boilPT = boilPT; }
 	void setDensity(double density) { this->density = density; }
-	void setOxistats(const short* oxistats) { memcpy(this->oxistats, oxistats, sizeof(oxistats)+1); }
+	void setOxistats(const short* oxistats) { memcpy(this->oxistats, oxistats, sizeof(oxistats) + 1); }
 	void setNameC(char* nameC) { strcpy_s(this->nameC, nameC); }
 	void setNameE(char* nameE) { strcpy_s(this->nameE, nameE); }
 	void setGroup(char* group) { strcpy_s(this->group, group); }
@@ -44,14 +45,28 @@ public:
 	void display();
 };
 
+inline Element::Element()
+{
+	this->electron = "";
+	this->meltPT = 0.0;
+	this->boilPT = 0.0;
+	this->density = 0.0;
+	this->oxistats[0] = NULL;
+	this->nameC[0] = NULL;
+	this->nameE[0] = NULL;
+	this->group[0] = NULL;
+	this->number = 0;
+	this->period = 0;
+}
+
 inline Element::Element(const Isotope* isotope, string electron, double meltPT, double boilPT, double density, const short* oxistats, const char* nameC, const char* nameE, const char* group, short number, short period)
 {
-	memcpy(this->isotope, isotope, sizeof(isotope)+1);
+	memcpy(this->isotope, isotope, sizeof(Isotope) * 10);
 	this->electron = electron;
 	this->meltPT = meltPT;
 	this->boilPT = boilPT;
 	this->density = density;
-	memcpy(this->oxistats, oxistats, sizeof(oxistats)+1);
+	memcpy(this->oxistats, oxistats, sizeof(short) * 8);
 	strcpy_s(this->nameC, nameC);
 	strcpy_s(this->nameE, nameE);
 	strcpy_s(this->group, group);
@@ -68,15 +83,18 @@ inline void Element::display()
 	cout << "电子排布：" << this->electron << endl;
 	cout << "氧化态：";
 	for (auto item : oxistats)
-		cout << showpos << item << noshowpos << ' ';
+		if (item != 0)
+			cout << showpos << item << noshowpos << ' ';
+		else
+			break;
 	cout << endl;
 	cout << "熔点：" << this->meltPT << endl;
 	cout << "沸点：" << this->boilPT << endl;
 	cout << "密度：" << this->density << endl;
-	cout << "\t名称\t丰度\t  半衰期  衰变方式  衰变产物" << endl;
+	cout << "同位素  名称\t  丰度\t    半衰期    衰变方式  衰变产物" << endl;
 	for (auto item : isotope)
 		if (item.getHalflife() != "")
-			this->isotope->display();
+			item.display();
 		else
 			break;
 }
