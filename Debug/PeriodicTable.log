@@ -1,0 +1,5 @@
+﻿  ElementData.cpp
+  Main.cpp
+  正在生成代码...
+G:\OneDrive\Project\C++\PeriodicTable\PeriodicTable\ElementData.cpp(13,11): warning C4101: “H”: 未引用的局部变量
+  PeriodicTable.vcxproj -> G:\OneDrive\Project\C++\PeriodicTable\Debug\PeriodicTable.exe

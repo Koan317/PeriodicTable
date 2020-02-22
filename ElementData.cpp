@@ -1,12 +1,19 @@
 ﻿#ifndef ELEMENTDATA
 #define ELEMENTDATA
-#include<array>
+#include<vector>
 #include<string>
+#include<iostream>
+#include"Element.h"
 using namespace std;
 
-array<string, 118> createPeriodicTable()
+vector<Element> createPeriodicTable()
 {
-	array<string, 118> periodicTalbe;
+	vector<Element> periodicTalbe;
+
+	Element* H;
+	Isotope isotemp("——", 0, "H-1", "——", 99.9885);
+	isotemp.display();
+	//H->setBoilPT
 
 	return periodicTalbe;
 }

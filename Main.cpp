@@ -1,10 +1,13 @@
 ﻿#include<iostream>
-#include<string>
+#include<vector>
 #include"Element.h"
 using namespace std;
 
+vector<Element> createPeriodicTable();
+
 int main()
 {
-	cout << sizeof(Isotope)<<endl;
+	vector<Element> t=createPeriodicTable();
+	//cout << sizeof(t) << endl;
 	system("pause");
 }
