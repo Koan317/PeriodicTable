@@ -3,14 +3,13 @@
 #include"Isotope.h"
 using namespace std;
 
-class Element :public Isotope
+class Element
 {
 private:
 	Isotope isotope[10];//常见同位素
 	string electron;//电子排布
 	double meltPT;//熔点
 	double boilPT;//沸点
-	double density;//标况密度
 	short oxistats[8];//氧化态
 	char nameC[4];//中文名称
 	char nameE[4];//元素符号
@@ -19,12 +18,11 @@ private:
 	short period;//周期数
 public:
 	Element();
-	Element(const Isotope* isotope, string electron, double meltPT, double boilPT, double density, const short* oxistats, const char* nameC, const char* nameE, const char* group, short number, short period);
+	Element(const Isotope* isotope, string electron, double meltPT, double boilPT, const short* oxistats, const char* nameC, const char* nameE, const char* group, short number, short period);
 	Isotope* getIsotope() { return this->isotope; }
 	string getElectron() { return this->electron; }
 	double getMeltPT() { return this->meltPT; }
 	double getBoilPT() { return this->boilPT; }
-	double getDensity() { return this->density; }
 	short* getOxistats() { return this->oxistats; }
 	char* getNameC() { return this->nameC; }
 	char* getNameE() { return this->nameE; }
@@ -35,14 +33,14 @@ public:
 	void setElectron(string electron) { this->electron = electron; }
 	void setMeltPT(double meltPT) { this->meltPT = meltPT; }
 	void setBoilPT(double boilPT) { this->boilPT = boilPT; }
-	void setDensity(double density) { this->density = density; }
 	void setOxistats(const short* oxistats) { memcpy(this->oxistats, oxistats, sizeof(oxistats) + 1); }
 	void setNameC(char* nameC) { strcpy_s(this->nameC, nameC); }
 	void setNameE(char* nameE) { strcpy_s(this->nameE, nameE); }
 	void setGroup(char* group) { strcpy_s(this->group, group); }
 	void setNumber(short number) { this->number = number; }
 	void setPeriod(short period) { this->period = period; }
-	void display();
+	Element& operator =(const Element& element);
+	friend ostream& operator<<(ostream& output, const Element& element);
 };
 
 inline Element::Element()
@@ -50,7 +48,6 @@ inline Element::Element()
 	this->electron = "";
 	this->meltPT = 0.0;
 	this->boilPT = 0.0;
-	this->density = 0.0;
 	this->oxistats[0] = NULL;
 	this->nameC[0] = NULL;
 	this->nameE[0] = NULL;
@@ -59,13 +56,12 @@ inline Element::Element()
 	this->period = 0;
 }
 
-inline Element::Element(const Isotope* isotope, string electron, double meltPT, double boilPT, double density, const short* oxistats, const char* nameC, const char* nameE, const char* group, short number, short period)
+inline Element::Element(const Isotope* isotope, string electron, double meltPT, double boilPT, const short* oxistats, const char* nameC, const char* nameE, const char* group, short number, short period)
 {
 	memcpy(this->isotope, isotope, sizeof(Isotope) * 10);
 	this->electron = electron;
 	this->meltPT = meltPT;
 	this->boilPT = boilPT;
-	this->density = density;
 	memcpy(this->oxistats, oxistats, sizeof(short) * 8);
 	strcpy_s(this->nameC, nameC);
 	strcpy_s(this->nameE, nameE);
@@ -74,27 +70,44 @@ inline Element::Element(const Isotope* isotope, string electron, double meltPT, 
 	this->period = period;
 }
 
-inline void Element::display()
+inline Element& Element::operator=(const Element& element)
 {
-	cout << "名称：" << this->nameC << endl;
-	cout << "符号：" << this->nameE << endl;
-	cout << "位置：第" << this->period << "周期，第" << this->group << "族" << endl;
-	cout << "原子序数：" << this->number << endl;
-	cout << "电子排布：" << this->electron << endl;
-	cout << "氧化态：";
-	for (auto item : oxistats)
+	if (this != &element)
+	{
+		this->electron = element.electron;
+		this->meltPT = element.meltPT;
+		this->boilPT = element.boilPT;
+		memcpy(this->oxistats, element.oxistats, sizeof(short) * 8);
+		memcpy(this->nameC, element.nameC, sizeof(char) * 4);
+		memcpy(this->nameE, element.nameE, sizeof(char) * 4);
+		memcpy(this->group, element.group, sizeof(char) * 4);
+		this->number = element.number;
+		this->period = element.period;
+	}
+	return *this;
+}
+
+inline ostream& operator<<(ostream& output, const Element& element)
+{
+	output << "名称：" << element.nameC << endl;
+	output << "符号：" << element.nameE << endl;
+	output << "位置：第" << element.period << "周期，第" << element.group << "族" << endl;
+	output << "原子序数：" << element.number << endl;
+	output << "电子排布：" << element.electron << endl;
+	output << "氧化态：";
+	for (auto item : element.oxistats)
 		if (item != 0)
-			cout << showpos << item << noshowpos << ' ';
+			output << showpos << item << noshowpos << ' ';
 		else
 			break;
-	cout << endl;
-	cout << "熔点：" << this->meltPT << endl;
-	cout << "沸点：" << this->boilPT << endl;
-	cout << "密度：" << this->density << endl;
-	cout << "同位素  名称\t  丰度\t    半衰期    衰变方式  衰变产物" << endl;
-	for (auto item : isotope)
+	output << endl;
+	output << "熔点：" << element.meltPT << "℃" << endl;
+	output << "沸点：" << element.boilPT << "℃" << endl;
+	output << "同位素  名称\t  丰度\t    半衰期    衰变方式  衰变产物" << endl;
+	for (auto item : element.isotope)
 		if (item.getHalflife() != "")
-			item.display();
+			output << item << endl;
 		else
 			break;
+	return output;
 }

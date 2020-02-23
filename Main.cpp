@@ -9,6 +9,9 @@ vector<Element> createPeriodicTable();
 int main()
 {
 	vector<Element> t=createPeriodicTable();
-	t[0].display();
-	system("pause");
+	while (1) {
+		for (auto i : t)
+			cout << i;
+		system("pause");
+	}
 }
