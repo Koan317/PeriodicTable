@@ -7,7 +7,7 @@ using namespace std;
 class Isotope
 {
 private:
-	string halflife;//半衰期
+	char halflife[14];//半衰期
 	short decaymode;//衰变方式,α，β，中子，质子，电子俘获
 	char name[8];//同位素名称
 	char product[8];//衰变产物
@@ -15,12 +15,12 @@ private:
 public:
 	Isotope();
 	Isotope(const char* halflife, short decaymode, const char* name, const char* product, double abundance);
-	string getHalflife() { return this->halflife; }
+	char* getHalflife() { return this->halflife; }
 	short getDecaymode() { return this->decaymode; }
 	char* getName() { return this->name; }
 	char* getProdect() { return this->product; }
 	double getAbundance() { return this->abundance; }
-	void setHalflife(string halflife) { this->halflife = halflife; }
+	void setHalflife(char* halflife) { strcpy_s(this->halflife, halflife); }
 	void setDecaymode(short decaymode) { this->decaymode = decaymode; }
 	void setName(char* name) { strcpy_s(this->name, name); }
 	void setProduct(char* product) { strcpy_s(this->product, product); }
@@ -30,14 +30,16 @@ public:
 
 inline Isotope::Isotope()
 {
-	this->halflife = "";
+	this->halflife[0] = NULL;
 	this->decaymode = 0;
-	double abundance = 0.0;
+	this->name[0] = NULL;
+	this->product[0] = NULL;
+	abundance = 0.0;
 }
 
 inline Isotope::Isotope(const char* halflife, short decaymode, const char* name, const char* product, double abundance)//半衰期，方式，名称，产物，丰度
 {
-	this->halflife = halflife;
+	strcpy_s(this->halflife, halflife);
 	this->decaymode = decaymode;
 	strcpy_s(this->name, name);
 	strcpy_s(this->product, product);
