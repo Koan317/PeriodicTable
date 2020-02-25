@@ -8,21 +8,23 @@ class Element
 private:
 	Isotope isotope[10];//常见同位素
 	string electron;//电子排布
-	double meltPT;//熔点
-	double boilPT;//沸点
+	short number;//原子序数
+	short period;//周期数
+	float meltPT;//熔点
+	float boilPT;//沸点
+	double atomicmass;//原子量
 	short oxistats[8];//氧化态
 	char nameC[4];//中文名称
 	char nameE[4];//元素符号
 	char group[4];//族序数
-	short number;//原子序数
-	short period;//周期数
 public:
 	Element();
-	Element(const Isotope* isotope, string electron, double meltPT, double boilPT, const short* oxistats, const char* nameC, const char* nameE, const char* group, short number, short period);
+	Element(const Isotope* isotope, string electron, float meltPT, float boilPT, double atomicmass, const short* oxistats, const char* nameC, const char* nameE, const char* group, short number, short period);
 	Isotope* getIsotope() { return this->isotope; }
 	string getElectron() { return this->electron; }
-	double getMeltPT() { return this->meltPT; }
-	double getBoilPT() { return this->boilPT; }
+	float getMeltPT() { return this->meltPT; }
+	float getBoilPT() { return this->boilPT; }
+	double getAtomicMass() { return this->atomicmass; }
 	short* getOxistats() { return this->oxistats; }
 	char* getNameC() { return this->nameC; }
 	char* getNameE() { return this->nameE; }
@@ -31,8 +33,9 @@ public:
 	short getPeriod() { return this->period; }
 	void setIsotope(Isotope* isotope) { memcpy(this->isotope, isotope, sizeof(isotope) + 1); }
 	void setElectron(string electron) { this->electron = electron; }
-	void setMeltPT(double meltPT) { this->meltPT = meltPT; }
-	void setBoilPT(double boilPT) { this->boilPT = boilPT; }
+	void setMeltPT(float meltPT) { this->meltPT = meltPT; }
+	void setBoilPT(float boilPT) { this->boilPT = boilPT; }
+	void setAtomicMass(double atomicmass) { this->atomicmass = atomicmass; }
 	void setOxistats(const short* oxistats) { memcpy(this->oxistats, oxistats, sizeof(oxistats) + 1); }
 	void setNameC(char* nameC) { strcpy_s(this->nameC, nameC); }
 	void setNameE(char* nameE) { strcpy_s(this->nameE, nameE); }
@@ -48,6 +51,7 @@ inline Element::Element()
 	this->electron = "";
 	this->meltPT = 0.0;
 	this->boilPT = 0.0;
+	this->atomicmass = 0.0;
 	this->oxistats[0] = NULL;
 	this->nameC[0] = NULL;
 	this->nameE[0] = NULL;
@@ -56,12 +60,13 @@ inline Element::Element()
 	this->period = 0;
 }
 
-inline Element::Element(const Isotope* isotope, string electron, double meltPT, double boilPT, const short* oxistats, const char* nameC, const char* nameE, const char* group, short number, short period)
+inline Element::Element(const Isotope* isotope, string electron, float meltPT, float boilPT, double atomicmass, const short* oxistats, const char* nameC, const char* nameE, const char* group, short number, short period)
 {
 	memcpy(this->isotope, isotope, sizeof(Isotope) * 10);
 	this->electron = electron;
 	this->meltPT = meltPT;
 	this->boilPT = boilPT;
+	this->atomicmass = atomicmass;
 	memcpy(this->oxistats, oxistats, sizeof(short) * 8);
 	strcpy_s(this->nameC, nameC);
 	strcpy_s(this->nameE, nameE);
@@ -77,6 +82,7 @@ inline Element& Element::operator=(const Element& element)
 		this->electron = element.electron;
 		this->meltPT = element.meltPT;
 		this->boilPT = element.boilPT;
+		this->atomicmass = atomicmass;
 		memcpy(this->oxistats, element.oxistats, sizeof(short) * 8);
 		memcpy(this->nameC, element.nameC, sizeof(char) * 4);
 		memcpy(this->nameE, element.nameE, sizeof(char) * 4);
@@ -91,6 +97,7 @@ inline ostream& operator<<(ostream& output, const Element& element)
 {
 	output << "名称：" << element.nameC << endl;
 	output << "符号：" << element.nameE << endl;
+	output << "原子量：" << element.atomicmass << endl;
 	output << "位置：第" << element.period << "周期，第" << element.group << "族" << endl;
 	output << "原子序数：" << element.number << endl;
 	output << "电子排布：" << element.electron << endl;
@@ -109,5 +116,6 @@ inline ostream& operator<<(ostream& output, const Element& element)
 			output << item << endl;
 		else
 			break;
+	output << "--------------------------------------------------------" << endl;
 	return output;
 }

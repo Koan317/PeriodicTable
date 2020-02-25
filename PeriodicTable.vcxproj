@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClInclude Include="Element.h" />
     <ClInclude Include="Isotope.h" />
+    <ClInclude Include="test.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
