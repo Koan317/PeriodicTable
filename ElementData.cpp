@@ -279,6 +279,7 @@ vector<Element> createPeriodicTable()
 	periodicTable.push_back(Ni);
 
 	cout << '=';
+	oxi[3] = oxi[2] = 0;
 	iso[0] = Isotope("——", 0, "Cu-63", "——", 69.15);
 	iso[1] = Isotope("12.7时", 5, "Cu-64", "Ni-64", 0.0);
 	iso[2] = Isotope("12.7时", 2, "Cu-64", "Zn-64", 0.0);
@@ -286,7 +287,7 @@ vector<Element> createPeriodicTable()
 	iso[4] = Isotope("61.83时", 2, "Cu-67", "Zn-67", 0.0);
 	iso[5] = Isotope();
 	iso[6] = Isotope();
-	static Element Cu(iso, "[Ar]d10s1", 1084.62, 2562, 63.546f, oxi, "铜", "Cu", "ⅠB", 29, 4);
+	static Element Cu(iso, "[Ar]d10s1", 1084.62f, 2562, 63.546f, oxi, "铜", "Cu", "ⅠB", 29, 4);
 	periodicTable.push_back(Cu);
 
 	cout << '=';
@@ -299,8 +300,118 @@ vector<Element> createPeriodicTable()
 	iso[6] = Isotope(">1.3亿亿年", 2, "Zn-70", "Ge-70", 0.6);
 	iso[7] = Isotope("2.4分", 2, "Zn-71", "Ga-71", 0.0);
 	iso[8] = Isotope("46.5时", 2, "Zn-72", "Ga-72", 0.0);
-	static Element Zn(iso, "[Ar]d10s2", 419.53, 907, 65.38f, oxi, "锌", "Zn", "ⅡB", 30, 4);
+	static Element Zn(iso, "[Ar]d10s2", 419.53f, 907, 65.38f, oxi, "锌", "Zn", "ⅡB", 30, 4);
 	periodicTable.push_back(Zn);
+
+	cout << '=';
+	oxi[1] = 0, oxi[0] = 13;
+	iso[0] = Isotope("——", 0, "Ga-69", "——", 60.11);
+	iso[1] = Isotope("——", 0, "Ga-71", "——", 39.89);
+	iso[2] = Isotope();
+	iso[3] = Isotope();
+	iso[4] = Isotope();
+	iso[5] = Isotope();
+	iso[6] = Isotope();
+	iso[7] = Isotope();
+	iso[8] = Isotope();
+	static Element Ga(iso, "[Ar]d10s2p1", 29.765f, 2400, 69.723f, oxi, "镓", "Ga", "ⅢA", 31, 4);
+	periodicTable.push_back(Ga);
+
+	oxi[0] = 12, oxi[1] = 14;
+	iso[0] = Isotope("270.8天", 5, "Ge-68", "Ga-68", 0.0);
+	iso[1] = Isotope("——", 0, "Ge-70", "——", 21.23);
+	iso[2] = Isotope("11.26天", 5, "Ge-71", "Ga-71", 0.0);
+	iso[3] = Isotope("——", 0, "Ge-72", "——", 27.66);
+	iso[4] = Isotope("——", 0, "Ge-73", "——", 7.73);
+	iso[5] = Isotope("——", 0, "Ge-74", "——", 35.94);
+	iso[6] = Isotope("17.8万亿亿年", 2, "Ge-76", "Se-76", 60.11);
+	static Element Ge(iso, "[Ar]d10s2p2", 938.25f, 2833, 72.63f, oxi, "锗", "Ge", "ⅣA", 32, 4);
+	periodicTable.push_back(Ge);
+
+	cout << '=';
+	static char oxiAs[8] = { 7,11,12,13,15 };
+	memcpy(oxi, oxiAs, sizeof(char) * 8);
+	iso[0] = Isotope("80.3天", 5, "As-73", "Ge-73", 0.0);
+	iso[1] = Isotope("17.78天", 5, "As-74", "Ge-74", 0.0);
+	iso[2] = Isotope("17.78天", 2, "As-74", "Ge-74", 0.0);
+	iso[3] = Isotope("17.78天", 5, "As-74", "Se-74", 0.0);
+	iso[4] = Isotope("——", 0, "As-75", "——", 100);
+	iso[5] = Isotope();
+	iso[6] = Isotope();
+	static Element As(iso, "[Ar]d10s2p3", 817, 614, 74.922f, oxi, "砷", "As", "ⅤA", 33, 4);
+	periodicTable.push_back(As);
+
+	static char oxiSe[8] = { 8,12,14,16 };
+	memcpy(oxi, oxiSe, sizeof(char) * 8);
+	iso[0] = Isotope("8.4天", 5, "Se-72", "As-72", 0.0);
+	iso[1] = Isotope("——", 0, "Se-74", "——", 0.87);
+	iso[2] = Isotope("119.779天", 5, "Se-75", "As-75", 0.0);
+	iso[3] = Isotope("——", 0, "Se-76", "——", 9.36);
+	iso[4] = Isotope("——", 0, "Se-77", "——", 7.63);
+	iso[5] = Isotope("——", 0, "Se-78", "——", 23.78);
+	iso[6] = Isotope("32.7万年", 2, "Se-79", "Br-79", 0.0);
+	iso[7] = Isotope("——", 0, "Se-80", "——", 49.61);
+	iso[8] = Isotope("1.08万亿亿年", 2, "Se-82", "Kr-82", 8.73);
+	static Element Se(iso, "[Ar]d10s2p4", 221, 685, 78.971f, oxi, "硒", "Se", "ⅥA", 34, 4);
+	periodicTable.push_back(Se);
+
+	cout << '=';
+	static char oxiBr[8] = { 9,11,13,14,15,17 };
+	memcpy(oxi, oxiBr, sizeof(char) * 8);
+	iso[0] = Isotope("——", 0, "Br-79", "——", 50.69);
+	iso[1] = Isotope("——", 0, "Br-81", "——", 49.31);
+	iso[2] = Isotope();
+	iso[3] = Isotope();
+	iso[4] = Isotope();
+	iso[5] = Isotope();
+	iso[6] = Isotope();
+	iso[7] = Isotope();
+	iso[8] = Isotope();
+	static Element Br(iso, "[Ar]d10s2p5", -7.2f, 58.8f, 79.904f, oxi, "溴", "Br", "ⅦA", 35, 4);
+	periodicTable.push_back(Br);
+
+	static char oxiKr[8] = { 0 };
+	memcpy(oxi, oxiKr, sizeof(char) * 8);
+	iso[0] = Isotope("92万亿亿年", 2, "Kr-78", "Se-78", 0.35);
+	iso[1] = Isotope("35.04时", 5, "Kr-79", "Br-79", 0.0);
+	iso[2] = Isotope("35.04时", 2, "Kr-79", "Br-79", 0.0);
+	iso[3] = Isotope("——", 0, "Kr-80", "——", 2.25);
+	iso[4] = Isotope("22.9万年", 5, "Kr-81", "Br-81", 0.0);
+	iso[5] = Isotope("——", 0, "Kr-82", "——", 11.6);
+	iso[6] = Isotope("——", 0, "Kr-83", "——", 11.5);
+	iso[7] = Isotope("——", 0, "Kr-84", "——", 57.0);
+	iso[8] = Isotope("10.756年", 2, "Kr-85", "Rb-85", 0.0);
+	iso[9] = Isotope("——", 0, "Kr-86", "——", 17.3);
+	static Element Kr(iso, "[Ar]d10s2p6", -157.36f, -153.22f, 83.798f, oxi, "氪", "Kr", "0", 36, 4);
+	periodicTable.push_back(Kr);
+
+	cout << '=';
+	oxi[0] = 11;
+	iso[0] = Isotope("86.2天", 5, "Rb-83", "Kr-83", 0.0);
+	iso[1] = Isotope("32.9天", 5, "Rb-84", "Kr-84", 0.0);
+	iso[2] = Isotope("32.9天", 2, "Rb-84", "Kr-84", 0.0);
+	iso[3] = Isotope("32.9天", 2, "Rb-84", "Sr-84", 0.0);
+	iso[4] = Isotope("——", 0, "Rb-85", "——", 72.168);
+	iso[5] = Isotope("18.65天", 2, "Rb-86", "Sr-86", 0.0);
+	iso[6] = Isotope("488亿年", 2, "Rb-87", "Sr-87", 27.835);
+	iso[7] = Isotope();
+	iso[8] = Isotope();
+	iso[9] = Isotope();
+	static Element Rb(iso, "[Kr]s1", 39.31f, 688, 85.468f, oxi, "铷", "Rb", "ⅠA", 37, 5);
+	periodicTable.push_back(Rb);
+
+	oxi[0] = 12;
+	iso[0] = Isotope("25.36天", 5, "Sr-82", "Rb-82", 0.0);
+	iso[1] = Isotope("——", 0, "Sr-84", "——", 0.56);
+	iso[2] = Isotope("64.84天", 5, "Sr-85", "Rb-85", 0.0);
+	iso[3] = Isotope("——", 0, "Sr-86", "——", 9.86);
+	iso[4] = Isotope("——", 0, "Sr-87", "——", 7.0);
+	iso[5] = Isotope("——", 0, "Sr-88", "——", 82.58);
+	iso[6] = Isotope("50.53天", 5, "Sr-89", "Rb-89", 0.0);
+	iso[7] = Isotope("50.53天", 2, "Sr-89", "Y-89", 0.0);
+	iso[8] = Isotope("28.9年", 2, "Sr-90", "Y-90", 0.0);
+	static Element Sr(iso, "[Kr]s2", 777, 1382, 87.62f, oxi, "锶", "Sr", "ⅡA", 38, 5);
+	periodicTable.push_back(Sr);
 
 	return periodicTable;
 }
