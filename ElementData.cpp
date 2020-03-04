@@ -209,7 +209,7 @@ vector<Element> createPeriodicTable()
 	iso[1] = Isotope("——", 0, "Ti-46", "——", 8.0);
 	iso[2] = Isotope("——", 0, "Ti-47", "——", 7.3);
 	iso[3] = Isotope("——", 0, "Ti-48", "——", 73.8);
-	iso[4] = Isotope("——", 0, "Ti-49", "——",5.5);
+	iso[4] = Isotope("——", 0, "Ti-49", "——", 5.5);
 	iso[5] = Isotope("——", 0, "Ti-50", "——", 5.4);
 	static Element Ti(iso, "[Ar]d2s2", 1668, 3287, 47.867f, oxi, "钛", "Ti", "ⅣB", 22, 4);
 	periodicTable.push_back(Ti);
@@ -412,6 +412,85 @@ vector<Element> createPeriodicTable()
 	iso[8] = Isotope("28.9年", 2, "Sr-90", "Y-90", 0.0);
 	static Element Sr(iso, "[Kr]s2", 777, 1382, 87.62f, oxi, "锶", "Sr", "ⅡA", 38, 5);
 	periodicTable.push_back(Sr);
+
+	oxi[0] = 13;
+	iso[0] = Isotope("3.35天", 5, "Y-87", "Sr-87", 0.0);
+	iso[1] = Isotope("106.6天", 5, "Y-88", "Sr-88", 0.0);
+	iso[2] = Isotope("——", 0, "Y-89", "——", 100);
+	iso[3] = Isotope("2.67天", 2, "Y-90", "Zr-90", 0.0);
+	iso[4] = Isotope("58.5天", 2, "Y-91", "Zr-91", 0.0);
+	iso[5] = Isotope();
+	iso[6] = Isotope();
+	iso[7] = Isotope();
+	iso[8] = Isotope();
+	static Element Y(iso, "[Kr]d1s2", 1526, 2730, 88.906f, oxi, "钇", "Y", "ⅢB", 39, 5);
+	periodicTable.push_back(Y);
+
+	oxi[0] = 14;
+	iso[0] = Isotope("83.4天", 5, "Zr-88", "Y-88", 0.0);
+	iso[1] = Isotope("78.4时", 5, "Zr-89", "Y-89", 0.0);
+	iso[2] = Isotope("——", 0, "Zr-90", "——", 51.45);
+	iso[3] = Isotope("——", 0, "Zr-91", "——", 11.22);
+	iso[4] = Isotope("——", 0, "Zr-92", "——", 17.15);
+	iso[5] = Isotope("153万年", 2, "Zr-93", "Nb-93", 0.0);
+	iso[6] = Isotope(">11亿亿年", 2, "Zr-94", "Mo-94", 17.38);
+	iso[7] = Isotope("200亿亿年", 2, "Zr-96", "Mo-96", 2.8);
+	iso[8] = Isotope("200亿亿年", 2, "Zr-96", "Nb-96", 2.8);
+	static Element Zr(iso, "[Kr]d2s2", 1855, 4377, 91.224f, oxi, "锆", "Zr", "ⅣB", 40, 5);
+	periodicTable.push_back(Zr);
+
+	oxi[0] = 15;
+	iso[0] = Isotope("680年", 5, "Nb-91", "Zr-91", 0.0);
+	iso[1] = Isotope("3470万年", 5, "Nb-92", "Zr-92", 0.0);
+	iso[2] = Isotope("——", 0, "Nb-93", "——", 100);
+	iso[3] = Isotope("2.03万年", 2, "Nb-94", "Mo-94", 0.0);
+	iso[4] = Isotope("34.991天", 2, "Nb-95", "Mp-95", 0.0);
+	iso[5] = Isotope();
+	iso[6] = Isotope();
+	iso[7] = Isotope();
+	iso[8] = Isotope();
+	static Element Nb(iso, "[Kr]d4s1", 2477, 4744, 92.906f, oxi, "铌", "Nb", "ⅤB", 41, 5);
+	periodicTable.push_back(Nb);
+
+	oxi[0] = 14, oxi[1] = 16;
+	iso[0] = Isotope(">1.9万亿亿年", 2, "Mo-92", "Zr-92", 14.84);
+	iso[1] = Isotope("4000年", 5, "Mo-93", "Nb-93", 0.0);
+	iso[2] = Isotope("——", 0, "Mo-94", "——", 9.25);
+	iso[3] = Isotope("——", 0, "Mo-95", "——", 15.92);
+	iso[4] = Isotope("——", 0, "Mo-96", "——", 16.68);
+	iso[5] = Isotope("——", 0, "Mo-97", "——", 9.55);
+	iso[6] = Isotope(">100万亿年", 2, "Mo-98", "Ru-98", 24.13);
+	iso[7] = Isotope("65.94时", 2, "Mo-99", "Tc-99", 0.0);
+	iso[8] = Isotope("780亿亿年", 2, "Mo-100", "Ru-100", 9.63);
+	static Element Mo(iso, "[Kr]d5s1", 2623, 4639, 95.95f, oxi, "钼", "Mo", "ⅥB", 42, 5);
+	periodicTable.push_back(Mo);
+
+	oxi[0] = 14, oxi[1] = 17;
+	iso[0] = Isotope("61天", 5, "Tc-95", "Mo-95", 0.0);
+	iso[1] = Isotope("4.3天", 5, "Tc-96", "Mo-96", 0.0);
+	iso[2] = Isotope("260万年", 5, "Tc-97", "Mo-97", 0.0);
+	iso[3] = Isotope("420万年", 2, "Tc-98", "Ru-98", 0.0);
+	iso[4] = Isotope("21.11万年", 2, "Tc-99", "Ru-99", 0.0);
+	iso[5] = Isotope();
+	iso[6] = Isotope();
+	iso[7] = Isotope();
+	iso[8] = Isotope();
+	static Element Tc(iso, "[Kr]d5s2", 2157, 4265, 97.99f, oxi, "锝", "Tc", "ⅦB", 43, 5);
+	periodicTable.push_back(Tc);
+
+	oxi[0] = 14, oxi[1] = 17;
+	iso[0] = Isotope(">6.7亿亿年", 2, "Ru-96", "Mo-96", 5.52);
+	iso[1] = Isotope("2.9天", 5, "Ru-97", "Tc-97", 0.0);
+	iso[2] = Isotope("——", 0, "Ru-98", "——", 1.88);
+	iso[3] = Isotope("——", 0, "Ru-99", "——", 12.7);
+	iso[4] = Isotope("——", 0, "Ru-100", "——", 12.6);
+	iso[5] = Isotope("——", 0, "Ru-101", "——", 17.0);
+	iso[6] = Isotope("——", 0, "Ru-102", "——", 31.6);
+	iso[7] = Isotope("39.26天", 2, "Ru-103", "Rh-103", 0.0);
+	iso[8] = Isotope("——", 0, "Ru-104", "——", 18.7);
+	iso[9] = Isotope("373.59天", 2, "Ru-106", "Rh-106", 0.0);
+	static Element Ru(iso, "[Kr]d7s1", 2334, 4150, 101.07f, oxi, "钌", "Ru", "Ⅷ", 44, 5);
+	periodicTable.push_back(Ru);
 
 	return periodicTable;
 }
