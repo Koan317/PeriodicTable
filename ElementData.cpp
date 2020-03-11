@@ -478,7 +478,7 @@ vector<Element> createPeriodicTable()
 	static Element Tc(iso, "[Kr]d5s2", 2157, 4265, 97.99f, oxi, "锝", "Tc", "ⅦB", 43, 5);
 	periodicTable.push_back(Tc);
 
-	oxi[0] = 14, oxi[1] = 17;
+	oxi[0] = 13, oxi[1] = 14;
 	iso[0] = Isotope(">6.7亿亿年", 2, "Ru-96", "Mo-96", 5.52);
 	iso[1] = Isotope("2.9天", 5, "Ru-97", "Tc-97", 0.0);
 	iso[2] = Isotope("——", 0, "Ru-98", "——", 1.88);
@@ -491,6 +491,131 @@ vector<Element> createPeriodicTable()
 	iso[9] = Isotope("373.59天", 2, "Ru-106", "Rh-106", 0.0);
 	static Element Ru(iso, "[Kr]d7s1", 2334, 4150, 101.07f, oxi, "钌", "Ru", "Ⅷ", 44, 5);
 	periodicTable.push_back(Ru);
+
+	oxi[0] = 13, oxi[1] = 0;
+	iso[0] = Isotope("16.1天", 5, "Rh-99", "Ru-99", 0.0);
+	iso[1] = Isotope("3.3年", 5, "Rh-101", "Ru-101", 0.0);
+	iso[2] = Isotope("207天", 5, "Rh-102", "Ru-102", 0.0);
+	iso[3] = Isotope("207天", 2, "Rh-102", "Pd-102", 0.0);
+	iso[4] = Isotope("——", 0, "Rh-103", "——", 100);
+	iso[5] = Isotope("35.36时", 2, "Rh-105", "Pb-105", 0.0);
+	iso[6] = Isotope();
+	iso[7] = Isotope();
+	iso[8] = Isotope();
+	iso[9] = Isotope();
+	static Element Rh(iso, "[Kr]d8s1", 1964, 3695, 102.906f, oxi, "铑", "Rh", "Ⅷ", 45, 5);
+	periodicTable.push_back(Rh);
+
+	oxi[0] = 12, oxi[1] = 14;
+	iso[0] = Isotope("3.63天", 5, "Pd-100", "Rh-100", 0.0);
+	iso[1] = Isotope("——", 0, "Pd-102", "——", 1.02);
+	iso[2] = Isotope("16.991天", 5, "Pd-103", "Rh-103", 0.0);
+	iso[3] = Isotope("——", 0, "Pd-104", "——", 11.14);
+	iso[4] = Isotope("——", 0, "Pd-105", "——", 22.33);
+	iso[5] = Isotope("——", 0, "Pd-106", "——", 27.33);
+	iso[6] = Isotope("650万年", 2, "Pd-107", "Ag-107", 0.0);
+	iso[7] = Isotope("——", 0, "Pd-108", "——", 26.46);
+	iso[8] = Isotope(">60亿亿年", 2, "Pd-110", "Cd-110", 11.72);
+	static Element Pd(iso, "[Kr]d10", 1554.9f, 2963, 106.42f, oxi, "钯", "Pd", "Ⅷ", 46, 5);
+	periodicTable.push_back(Pd);
+
+	oxi[0] = 11, oxi[1] = 0;
+	iso[0] = Isotope("41.2天", 5, "Ag-105", "Pd-105", 0.0);
+	iso[1] = Isotope("——", 0, "Ag-107", "——", 51.839);
+	iso[2] = Isotope("——", 0, "Ag-109", "——", 48.161);
+	iso[3] = Isotope("7.45天", 2, "Ag-111", "Cd-111", 0.0);
+	iso[4] = Isotope();
+	iso[5] = Isotope();
+	iso[6] = Isotope();
+	iso[7] = Isotope();
+	iso[8] = Isotope();
+	static Element Ag(iso, "[Kr]d10s1", 961.78f, 2162, 107.868f, oxi, "银", "Ag", "ⅠB", 47, 5);
+	periodicTable.push_back(Ag);
+
+	oxi[0] = 12;
+	iso[0] = Isotope(">95亿亿年", 5, "Cd-106", "Pd-106", 1.25);
+	iso[1] = Isotope("6.5时", 5, "Cd-107", "Ag-107", 0.0);
+	iso[2] = Isotope(">67亿亿年", 5, "Cd-108", "Pd-108", 0.89);
+	iso[3] = Isotope("462.6天", 5, "Cd-109", "Ag-109", 0.0);
+	iso[4] = Isotope("——", 0, "Cd-110", "——", 12.49);
+	iso[5] = Isotope("——", 0, "Cd-111", "——", 12.8);
+	iso[6] = Isotope("——", 0, "Cd-112", "——", 24.13);
+	iso[7] = Isotope("7700万亿年", 2, "Cd-113", "In-113", 12.22);
+	iso[8] = Isotope(">93亿亿年", 2, "Cd-114", "Sn-114", 28.73);
+	iso[9] = Isotope("2900亿亿年", 2, "Cd-116", "Sn-116", 7.49);
+	static Element Cd(iso, "[Kr]d10s2", 321.07f, 767, 12.414f, oxi, "镉", "Cd", "ⅡB", 48, 5);
+	periodicTable.push_back(Cd);
+
+	oxi[0] = 13;
+	iso[0] = Isotope("——", 0, "In-113", "——", 4.29);
+	iso[1] = Isotope("441万亿年", 2, "In-115", "Sn-115", 95.71);
+	iso[2] = Isotope();
+	iso[3] = Isotope();
+	iso[4] = Isotope();
+	iso[5] = Isotope();
+	iso[6] = Isotope();
+	iso[7] = Isotope();
+	iso[8] = Isotope();
+	iso[9] = Isotope();
+	static Element In(iso, "[Kr]d10s2p1", 156.599f, 2072, 114.818f, oxi, "铟", "In", "ⅢA", 49, 5);
+	periodicTable.push_back(In);
+
+	oxi[0] = 12, oxi[1] = 14;
+	iso[0] = Isotope("——", 0, "Sn-112", "——", 0.97);
+	iso[1] = Isotope("——", 0, "Sn-114", "——", 0.66);
+	iso[2] = Isotope("——", 0, "Sn-115", "——", 0.34);
+	iso[3] = Isotope("——", 0, "Sn-116", "——", 14.54);
+	iso[4] = Isotope("——", 0, "Sn-117", "——", 7.68);
+	iso[5] = Isotope("——", 0, "Sn-118", "——", 24.22);
+	iso[6] = Isotope("——", 0, "Sn-119", "——", 8.59);
+	iso[7] = Isotope("——", 0, "Sn-120", "——", 32.58);
+	iso[8] = Isotope("——", 0, "Sn-122", "——", 4.63);
+	iso[9] = Isotope(">10亿亿年", 2, "Sn-124", "Te-124", 5.79);
+	static Element Sn(iso, "[Kr]d10s2p2", 231.93f, 2602, 118.71f, oxi, "锡", "Sn", "ⅣA", 50, 5);
+	periodicTable.push_back(Sn);
+
+	oxi[0] = 13, oxi[1] = 15;
+	iso[0] = Isotope("——", 0, "Sb-121", "——", 57.36);
+	iso[1] = Isotope("——", 0, "Sb-123", "——", 42.64);
+	iso[2] = Isotope("2.7582年", 2, "Sb-125", "Te-125", 0.0);
+	iso[3] = Isotope();
+	iso[4] = Isotope();
+	iso[5] = Isotope();
+	iso[6] = Isotope();
+	iso[7] = Isotope();
+	iso[8] = Isotope();
+	iso[9] = Isotope();
+	static Element Sb(iso, "[Kr]d10s2p3", 630.63f, 1587, 121.76f, oxi, "锑", "Sb", "ⅤA", 51, 5);
+	periodicTable.push_back(Sb);
+
+	oxi[0] = 14, oxi[1] = 16;
+	iso[0] = Isotope(">2.2亿亿年", 2, "Te-120", "Sn-120", 0.09);
+	iso[1] = Isotope("121天", 5, "Te-121", "Sb-121", 0.0);
+	iso[2] = Isotope("——", 0, "Te-122", "——", 2.55);
+	iso[3] = Isotope(">9.2亿亿年", 5, "Te-123", "Sb-123", 0.89);
+	iso[4] = Isotope("——", 0, "Te-124", "——", 4.74);
+	iso[5] = Isotope("——", 0, "Te-125", "——", 7.07);
+	iso[6] = Isotope("——", 0, "Te-126", "——", 18.84);
+	iso[7] = Isotope("9.35时", 2, "Te-127", "I-127", 0.0);
+	iso[8] = Isotope("2.2亿亿亿年", 2, "Te-128", "Xe-128", 31.74);
+	iso[9] = Isotope("7.9万亿亿年", 2, "Te-130", "Xe-130", 34.08);
+	static Element Te(iso, "[Kr]d10s2p4", 449.51f, 988, 127.6f, oxi, "碲", "Te", "ⅥA", 52, 5);
+	periodicTable.push_back(Te);
+
+	static char oxiI[8] = { 9,11,13,15,17 };
+	memcpy(oxi, oxiI, sizeof(char) * 8);
+	iso[0] = Isotope("13天", 5, "I-123", "Te-123", 0.0);
+	iso[1] = Isotope("4.176天", 5, "I-124", "Te-124", 0.0);
+	iso[2] = Isotope("59.4天", 5, "I-125", "Te-125", 0.0);
+	iso[3] = Isotope("——", 0, "I-127", "——", 100);
+	iso[4] = Isotope("157万年", 2, "I-129", "Xe-129", 0.0);
+	iso[5] = Isotope("8.0207天", 2, "I-131", "Xe-131", 0.0);
+	iso[6] = Isotope("6.57天", 2, "I-135", "Xe-135", 0.0);
+	iso[7] = Isotope();
+	iso[8] = Isotope();
+	iso[9] = Isotope();
+	static Element I(iso, "[Kr]d10s2p5", 113.7f, 184.3f, 126.904f, oxi, "碘", "I", "ⅦA", 53, 5);
+	periodicTable.push_back(I);
 
 	return periodicTable;
 }
