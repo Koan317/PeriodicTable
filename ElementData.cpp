@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include<vector>
 #include<iostream>
 #include"Element.h"
@@ -413,6 +413,7 @@ vector<Element> createPeriodicTable()
 	static Element Sr(iso, "[Kr]s2", 777, 1382, 87.62f, oxi, "锶", "Sr", "ⅡA", 38, 5);
 	periodicTable.push_back(Sr);
 
+    cout << '=';
 	oxi[0] = 13;
 	iso[0] = Isotope("3.35天", 5, "Y-87", "Sr-87", 0.0);
 	iso[1] = Isotope("106.6天", 5, "Y-88", "Sr-88", 0.0);
@@ -426,6 +427,7 @@ vector<Element> createPeriodicTable()
 	static Element Y(iso, "[Kr]d1s2", 1526, 2730, 88.906f, oxi, "钇", "Y", "ⅢB", 39, 5);
 	periodicTable.push_back(Y);
 
+    cout << '=';
 	oxi[0] = 14;
 	iso[0] = Isotope("83.4天", 5, "Zr-88", "Y-88", 0.0);
 	iso[1] = Isotope("78.4时", 5, "Zr-89", "Y-89", 0.0);
@@ -439,6 +441,7 @@ vector<Element> createPeriodicTable()
 	static Element Zr(iso, "[Kr]d2s2", 1855, 4377, 91.224f, oxi, "锆", "Zr", "ⅣB", 40, 5);
 	periodicTable.push_back(Zr);
 
+    cout << '=';
 	oxi[0] = 15;
 	iso[0] = Isotope("680年", 5, "Nb-91", "Zr-91", 0.0);
 	iso[1] = Isotope("3470万年", 5, "Nb-92", "Zr-92", 0.0);
@@ -465,6 +468,7 @@ vector<Element> createPeriodicTable()
 	static Element Mo(iso, "[Kr]d5s1", 2623, 4639, 95.95f, oxi, "钼", "Mo", "ⅥB", 42, 5);
 	periodicTable.push_back(Mo);
 
+    cout << '=';
 	oxi[0] = 14, oxi[1] = 17;
 	iso[0] = Isotope("61天", 5, "Tc-95", "Mo-95", 0.0);
 	iso[1] = Isotope("4.3天", 5, "Tc-96", "Mo-96", 0.0);
@@ -492,6 +496,7 @@ vector<Element> createPeriodicTable()
 	static Element Ru(iso, "[Kr]d7s1", 2334, 4150, 101.07f, oxi, "钌", "Ru", "Ⅷ", 44, 5);
 	periodicTable.push_back(Ru);
 
+    cout << '=';
 	oxi[0] = 13, oxi[1] = 0;
 	iso[0] = Isotope("16.1天", 5, "Rh-99", "Ru-99", 0.0);
 	iso[1] = Isotope("3.3年", 5, "Rh-101", "Ru-101", 0.0);
@@ -519,6 +524,7 @@ vector<Element> createPeriodicTable()
 	static Element Pd(iso, "[Kr]d10", 1554.9f, 2963, 106.42f, oxi, "钯", "Pd", "Ⅷ", 46, 5);
 	periodicTable.push_back(Pd);
 
+    cout << '=';
 	oxi[0] = 11, oxi[1] = 0;
 	iso[0] = Isotope("41.2天", 5, "Ag-105", "Pd-105", 0.0);
 	iso[1] = Isotope("——", 0, "Ag-107", "——", 51.839);
@@ -546,6 +552,7 @@ vector<Element> createPeriodicTable()
 	static Element Cd(iso, "[Kr]d10s2", 321.07f, 767, 12.414f, oxi, "镉", "Cd", "ⅡB", 48, 5);
 	periodicTable.push_back(Cd);
 
+    cout << '=';
 	oxi[0] = 13;
 	iso[0] = Isotope("——", 0, "In-113", "——", 4.29);
 	iso[1] = Isotope("441万亿年", 2, "In-115", "Sn-115", 95.71);
@@ -560,6 +567,7 @@ vector<Element> createPeriodicTable()
 	static Element In(iso, "[Kr]d10s2p1", 156.599f, 2072, 114.818f, oxi, "铟", "In", "ⅢA", 49, 5);
 	periodicTable.push_back(In);
 
+    cout << '=';
 	oxi[0] = 12, oxi[1] = 14;
 	iso[0] = Isotope("——", 0, "Sn-112", "——", 0.97);
 	iso[1] = Isotope("——", 0, "Sn-114", "——", 0.66);
@@ -574,6 +582,7 @@ vector<Element> createPeriodicTable()
 	static Element Sn(iso, "[Kr]d10s2p2", 231.93f, 2602, 118.71f, oxi, "锡", "Sn", "ⅣA", 50, 5);
 	periodicTable.push_back(Sn);
 
+    cout << '=';
 	oxi[0] = 13, oxi[1] = 15;
 	iso[0] = Isotope("——", 0, "Sb-121", "——", 57.36);
 	iso[1] = Isotope("——", 0, "Sb-123", "——", 42.64);
@@ -602,6 +611,7 @@ vector<Element> createPeriodicTable()
 	static Element Te(iso, "[Kr]d10s2p4", 449.51f, 988, 127.6f, oxi, "碲", "Te", "ⅥA", 52, 5);
 	periodicTable.push_back(Te);
 
+    cout << '=';
 	static char oxiI[8] = { 9,11,13,15,17 };
 	memcpy(oxi, oxiI, sizeof(char) * 8);
 	iso[0] = Isotope("13天", 5, "I-123", "Te-123", 0.0);
